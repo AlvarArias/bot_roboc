@@ -52,18 +52,6 @@ Go to Student Page
     Wait Until Page Contains Element   id:id_password1
 
 Fill the form
-    # Control Room
-    #${theusername}=    Get Work Item Variable   username
-    #${thename}=    Get Work Item Variable    estname
-    #${thelastname}=    Get Work Item Variable     lastname 
-    #${theemail}=    Get Work Item Variable    email 
-    #${thepass}=    Get Work Item Variable    password
-    #${thechildname}=    Get Work Item Variable    childname
-    #${thechildlastname}=    Get Work Item Variable    childlastname
-    #${theedad}=    Get Work Item Variable    edad
-    #${thecity}=    Get Work Item Variable    city
-    #${thecountry}=    Get Work Item Variable    country
-    
     #Local
     ${payload}=  Get Work Item Payload
     ${theusername}=    Set Variable  ${payload}[username]
@@ -117,13 +105,7 @@ Fill the form
     Input Text When Element Is Visible   id:id_city    ${thecity} 
     # pais
     Input Text When Element Is Visible   id:id_postcode    ${thecountry} 
-    #Find Element    id:id_country
-    #Scroll Element Into View    id:id_postcode
-    #Wait Until Element Is Visible   id:id_country
-    #Click Element    id:id_country
-    #Click Element    id:id_country_chosen
-    #Input Text    class:chosen-search-input    ${thecountry} 
-    #Click Element    class:active-result
+   
 
     # Record screen
     Screenshot    class:panel    ${OUTPUT_DIR}${/}new_student2.png
